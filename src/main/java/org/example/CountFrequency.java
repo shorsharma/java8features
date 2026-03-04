@@ -8,7 +8,8 @@ public class CountFrequency {
     public static void main(String[] args) {
         String s = "program";
 
-        s.chars().mapToObj(c -> (char) c)
+        s.chars()
+                .mapToObj(c -> (char) c)
                 .collect(
                         Collectors.groupingBy(Function.identity(), LinkedHashMap::new ,Collectors.counting())
                 ).forEach((k,v) -> System.out.println(k + " -> " + v));
